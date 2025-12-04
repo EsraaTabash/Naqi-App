@@ -1,0 +1,75 @@
+name: naqi
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  
+  flutter:
+    sdk: flutter
+  shared_preferences: ^2.1.0
+  flutter_svg: ^2.0.10+1
+  path_drawing: ^1.0.1
+  google_nav_bar: ^5.0.6
+  awesome_dialog: ^3.0.2
+  smooth_page_indicator: ^1.0.0
+  badges: ^2.0.0
+  url_launcher: ^6.0.12
+  flutter_speed_dial: ^7.0.0
+  intl: ^0.17.0
+  flutter_screenutil: ^5.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/logo.png
+    - images/logo2.jpg
+    - images/background.jpg
+    - images/object.png
+    - images/whiteLogo.svg
+    - images/background2.jpeg
+    - images/profile.jpg
+    - images/profile.svg
+    - images/profile.png
+    - images/bg.jpg
+    - images/Group1.png
+    - images/Group2.png
+    - images/Group3.png
+    - icons/user.svg
+    - icons/user.png
+    - icons/users.svg
+    - icons/search.svg
+    - icons/globe.svg
+    - icons/bell.svg
+    - icons/alert.svg
+    - icons/like.svg
+    - icons/userp.svg
+    - icons/alert.svg
+    - icons/userss.svg
+    - icons/like.svg
+    - icons/facebook.svg
+    - icons/twitter.svg
+    - icons/google.svg
+    - icons/instagram.svg
+    - icons/sms.svg
+    - icons/phone.svg
+    - icons/settings.svg
+    - icons/pro.svg
+    - icons/del.svg
+    - images/logo.svg
+    - images/Bottle of water (2).gif
+    - images/Delivery address.gif
+    - images/Refreshing.gif
+    - images/de.gif
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Regular.ttf
