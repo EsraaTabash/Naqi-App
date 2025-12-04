@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Settings extends StatefulWidget {
-  const Settings({Key? key}) : super(key: key);
+  const Settings({super.key});
 
   @override
   _SettingsState createState() => _SettingsState();
@@ -49,7 +49,7 @@ class _SettingsState extends State<Settings> {
                     });
                   },
                   activeTrackColor: Colors.blue.shade200,
-                  activeColor: Colors.blue,
+                  activeThumbColor: Colors.blue,
                 ),
               ),
               _buildSettingOption(
@@ -83,7 +83,7 @@ class _SettingsState extends State<Settings> {
                     });
                   },
                   activeTrackColor: Colors.blue.shade200,
-                  activeColor: Colors.blue,
+                  activeThumbColor: Colors.blue,
                 ),
               ),
             ],

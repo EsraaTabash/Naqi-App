@@ -22,6 +22,7 @@ class OrderDetails extends StatefulWidget {
   ); // Define the desired date format
 
   OrderDetails({
+    super.key,
     required this.orderNumber,
     required this.clientName,
     required this.total,
@@ -146,9 +147,10 @@ class _OrderDetailsState extends State<OrderDetails> {
                           Expanded(
                             child: OrderDetailCard(
                               title: 'Delivery Date : ',
-                              value: widget.dateFormat
-                                  .format(widget.deliveryDate)
-                                  .toString(),
+                              value:
+                                  widget.dateFormat
+                                      .format(widget.deliveryDate)
+                                      .toString(),
                             ),
                           ),
                           if (isCancelledOrder) ...[
@@ -344,7 +346,7 @@ class OrderDetailCard extends StatelessWidget {
   final String title;
   final String value;
 
-  OrderDetailCard({required this.title, required this.value});
+  const OrderDetailCard({super.key, required this.title, required this.value});
 
   @override
   Widget build(BuildContext context) {

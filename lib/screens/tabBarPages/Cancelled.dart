@@ -3,7 +3,7 @@ import '../../widget/order.dart';
 
 class Cancelled extends StatefulWidget {
   final bool isAgent; // Add this parameter
-  const Cancelled({Key? key, required this.isAgent}) : super(key: key);
+  const Cancelled({super.key, required this.isAgent});
 
   @override
   State<Cancelled> createState() => _CancelledState();
@@ -31,6 +31,7 @@ class _CancelledState extends State<Cancelled> {
     return orders;
   }
 
+  @override
   void initState() {
     allOrders = [
       Order(
@@ -144,26 +145,27 @@ class _CancelledState extends State<Cancelled> {
       ),
     ];
 
-    orderWidgets = sortedOrders().map((order) {
-      return Order(
-        order.orderNumber,
-        order.clientName,
-        order.periodDate,
-        order.type,
-        order.isAssignedInWay,
-        total: order.total,
-        clientNumber: order.clientNumber,
-        addressType: order.addressType,
-        paymentType: order.paymentType,
-        deliveryDateTime: order.deliveryDateTime,
-        productName: order.productName,
-        quantity: order.quantity,
-        price: order.price,
-        img: order.img,
-        reason: order.reason, // Add reason parameter
-        isAgent: order.isAgent,
-      );
-    }).toList();
+    orderWidgets =
+        sortedOrders().map((order) {
+          return Order(
+            order.orderNumber,
+            order.clientName,
+            order.periodDate,
+            order.type,
+            order.isAssignedInWay,
+            total: order.total,
+            clientNumber: order.clientNumber,
+            addressType: order.addressType,
+            paymentType: order.paymentType,
+            deliveryDateTime: order.deliveryDateTime,
+            productName: order.productName,
+            quantity: order.quantity,
+            price: order.price,
+            img: order.img,
+            reason: order.reason, // Add reason parameter
+            isAgent: order.isAgent,
+          );
+        }).toList();
   }
 
   @override
@@ -187,26 +189,27 @@ class _CancelledState extends State<Cancelled> {
                   onPressed: () {
                     setState(() {
                       sortByBottles = !sortByBottles;
-                      orderWidgets = sortedOrders().map((order) {
-                        return Order(
-                          order.orderNumber,
-                          order.clientName,
-                          order.periodDate,
-                          order.type,
-                          order.isAssignedInWay,
-                          total: order.total,
-                          clientNumber: order.clientNumber,
-                          addressType: order.addressType,
-                          paymentType: order.paymentType,
-                          deliveryDateTime: order.deliveryDateTime,
-                          productName: order.productName,
-                          quantity: order.quantity,
-                          price: order.price,
-                          img: order.img,
-                          reason: order.reason,
-                          isAgent: order.isAgent,
-                        );
-                      }).toList();
+                      orderWidgets =
+                          sortedOrders().map((order) {
+                            return Order(
+                              order.orderNumber,
+                              order.clientName,
+                              order.periodDate,
+                              order.type,
+                              order.isAssignedInWay,
+                              total: order.total,
+                              clientNumber: order.clientNumber,
+                              addressType: order.addressType,
+                              paymentType: order.paymentType,
+                              deliveryDateTime: order.deliveryDateTime,
+                              productName: order.productName,
+                              quantity: order.quantity,
+                              price: order.price,
+                              img: order.img,
+                              reason: order.reason,
+                              isAgent: order.isAgent,
+                            );
+                          }).toList();
                     });
                   },
                   icon: Icon(
@@ -229,26 +232,27 @@ class _CancelledState extends State<Cancelled> {
                   onPressed: () {
                     setState(() {
                       sortByDate = !sortByDate;
-                      orderWidgets = sortedOrders().map((order) {
-                        return Order(
-                          order.orderNumber,
-                          order.clientName,
-                          order.periodDate,
-                          order.type,
-                          order.isAssignedInWay,
-                          total: order.total,
-                          clientNumber: order.clientNumber,
-                          addressType: order.addressType,
-                          paymentType: order.paymentType,
-                          deliveryDateTime: order.deliveryDateTime,
-                          productName: order.productName,
-                          quantity: order.quantity,
-                          price: order.price,
-                          img: order.img,
-                          reason: order.reason,
-                          isAgent: order.isAgent,
-                        );
-                      }).toList();
+                      orderWidgets =
+                          sortedOrders().map((order) {
+                            return Order(
+                              order.orderNumber,
+                              order.clientName,
+                              order.periodDate,
+                              order.type,
+                              order.isAssignedInWay,
+                              total: order.total,
+                              clientNumber: order.clientNumber,
+                              addressType: order.addressType,
+                              paymentType: order.paymentType,
+                              deliveryDateTime: order.deliveryDateTime,
+                              productName: order.productName,
+                              quantity: order.quantity,
+                              price: order.price,
+                              img: order.img,
+                              reason: order.reason,
+                              isAgent: order.isAgent,
+                            );
+                          }).toList();
                     });
                   },
                   icon: Icon(

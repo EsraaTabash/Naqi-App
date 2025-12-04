@@ -3,6 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutUs extends StatelessWidget {
+  const AboutUs({super.key});
+
   void _launchInstagramProfile() async {
     final instagramUrl = 'https://www.instagram.com/naqiwatersa/';
     if (await canLaunch(instagramUrl)) {
@@ -73,7 +75,7 @@ class AboutUs extends StatelessWidget {
                 ),
               ),
               child: Center(
-                child: Container(
+                child: SizedBox(
                   width: 150,
                   height: 150,
                   child: SvgPicture.asset(

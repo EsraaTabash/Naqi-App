@@ -4,7 +4,7 @@ import '../../widget/order.dart';
 class Completed extends StatefulWidget {
   final bool isAgent; // Add this parameter
 
-  const Completed({Key? key, required this.isAgent}) : super(key: key);
+  const Completed({super.key, required this.isAgent});
 
   @override
   State<Completed> createState() => _CompletedState();
@@ -32,6 +32,7 @@ class _CompletedState extends State<Completed> {
     return orders;
   }
 
+  @override
   void initState() {
     allOrders = [
       Order(
@@ -138,25 +139,26 @@ class _CompletedState extends State<Completed> {
       ),
     ];
 
-    orderWidgets = sortedOrders().map((order) {
-      return Order(
-        order.orderNumber,
-        order.clientName,
-        order.periodDate,
-        order.type,
-        order.isAssignedInWay,
-        total: order.total,
-        clientNumber: order.clientNumber,
-        addressType: order.addressType,
-        paymentType: order.paymentType,
-        deliveryDateTime: order.deliveryDateTime,
-        productName: order.productName,
-        quantity: order.quantity,
-        price: order.price,
-        img: order.img,
-        isAgent: order.isAgent,
-      );
-    }).toList();
+    orderWidgets =
+        sortedOrders().map((order) {
+          return Order(
+            order.orderNumber,
+            order.clientName,
+            order.periodDate,
+            order.type,
+            order.isAssignedInWay,
+            total: order.total,
+            clientNumber: order.clientNumber,
+            addressType: order.addressType,
+            paymentType: order.paymentType,
+            deliveryDateTime: order.deliveryDateTime,
+            productName: order.productName,
+            quantity: order.quantity,
+            price: order.price,
+            img: order.img,
+            isAgent: order.isAgent,
+          );
+        }).toList();
   }
 
   @override
@@ -180,25 +182,26 @@ class _CompletedState extends State<Completed> {
                   onPressed: () {
                     setState(() {
                       sortByBottles = !sortByBottles;
-                      orderWidgets = sortedOrders().map((order) {
-                        return Order(
-                          order.orderNumber,
-                          order.clientName,
-                          order.periodDate,
-                          order.type,
-                          order.isAssignedInWay,
-                          total: order.total,
-                          clientNumber: order.clientNumber,
-                          addressType: order.addressType,
-                          paymentType: order.paymentType,
-                          deliveryDateTime: order.deliveryDateTime,
-                          productName: order.productName,
-                          quantity: order.quantity,
-                          price: order.price,
-                          img: order.img,
-                          isAgent: order.isAgent,
-                        );
-                      }).toList();
+                      orderWidgets =
+                          sortedOrders().map((order) {
+                            return Order(
+                              order.orderNumber,
+                              order.clientName,
+                              order.periodDate,
+                              order.type,
+                              order.isAssignedInWay,
+                              total: order.total,
+                              clientNumber: order.clientNumber,
+                              addressType: order.addressType,
+                              paymentType: order.paymentType,
+                              deliveryDateTime: order.deliveryDateTime,
+                              productName: order.productName,
+                              quantity: order.quantity,
+                              price: order.price,
+                              img: order.img,
+                              isAgent: order.isAgent,
+                            );
+                          }).toList();
                     });
                   },
                   icon: Icon(
@@ -221,25 +224,26 @@ class _CompletedState extends State<Completed> {
                   onPressed: () {
                     setState(() {
                       sortByDate = !sortByDate;
-                      orderWidgets = sortedOrders().map((order) {
-                        return Order(
-                          order.orderNumber,
-                          order.clientName,
-                          order.periodDate,
-                          order.type,
-                          order.isAssignedInWay,
-                          total: order.total,
-                          clientNumber: order.clientNumber,
-                          addressType: order.addressType,
-                          paymentType: order.paymentType,
-                          deliveryDateTime: order.deliveryDateTime,
-                          productName: order.productName,
-                          quantity: order.quantity,
-                          price: order.price,
-                          img: order.img,
-                          isAgent: order.isAgent,
-                        );
-                      }).toList();
+                      orderWidgets =
+                          sortedOrders().map((order) {
+                            return Order(
+                              order.orderNumber,
+                              order.clientName,
+                              order.periodDate,
+                              order.type,
+                              order.isAssignedInWay,
+                              total: order.total,
+                              clientNumber: order.clientNumber,
+                              addressType: order.addressType,
+                              paymentType: order.paymentType,
+                              deliveryDateTime: order.deliveryDateTime,
+                              productName: order.productName,
+                              quantity: order.quantity,
+                              price: order.price,
+                              img: order.img,
+                              isAgent: order.isAgent,
+                            );
+                          }).toList();
                     });
                   },
                   icon: Icon(

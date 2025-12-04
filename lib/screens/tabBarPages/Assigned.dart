@@ -5,7 +5,7 @@ import 'package:naqi/widget/order.dart';
 class Assigned extends StatefulWidget {
   final bool isAgent;
 
-  Assigned({required this.isAgent});
+  const Assigned({super.key, required this.isAgent});
 
   @override
   State<Assigned> createState() => _AssignedState();
@@ -35,6 +35,7 @@ class _AssignedState extends State<Assigned> {
     return orders;
   }
 
+  @override
   void initState() {
     allOrders = [
       Order(
@@ -158,25 +159,26 @@ class _AssignedState extends State<Assigned> {
       ),
     ];
 
-    orderWidgets = sortedOrders().map((order) {
-      return Order(
-        order.orderNumber,
-        order.clientName,
-        order.periodDate,
-        order.type,
-        order.isAssignedInWay,
-        total: order.total,
-        clientNumber: order.clientNumber,
-        addressType: order.addressType,
-        paymentType: order.paymentType,
-        deliveryDateTime: order.deliveryDateTime,
-        productName: order.productName,
-        quantity: order.quantity,
-        price: order.price,
-        img: order.img,
-        isAgent: order.isAgent,
-      );
-    }).toList();
+    orderWidgets =
+        sortedOrders().map((order) {
+          return Order(
+            order.orderNumber,
+            order.clientName,
+            order.periodDate,
+            order.type,
+            order.isAssignedInWay,
+            total: order.total,
+            clientNumber: order.clientNumber,
+            addressType: order.addressType,
+            paymentType: order.paymentType,
+            deliveryDateTime: order.deliveryDateTime,
+            productName: order.productName,
+            quantity: order.quantity,
+            price: order.price,
+            img: order.img,
+            isAgent: order.isAgent,
+          );
+        }).toList();
   }
 
   @override
@@ -200,25 +202,26 @@ class _AssignedState extends State<Assigned> {
                   onPressed: () {
                     setState(() {
                       sortByBottles = !sortByBottles;
-                      orderWidgets = sortedOrders().map((order) {
-                        return Order(
-                          order.orderNumber,
-                          order.clientName,
-                          order.periodDate,
-                          order.type,
-                          order.isAssignedInWay,
-                          total: order.total,
-                          clientNumber: order.clientNumber,
-                          addressType: order.addressType,
-                          paymentType: order.paymentType,
-                          deliveryDateTime: order.deliveryDateTime,
-                          productName: order.productName,
-                          quantity: order.quantity,
-                          price: order.price,
-                          img: order.img,
-                          isAgent: order.isAgent,
-                        );
-                      }).toList();
+                      orderWidgets =
+                          sortedOrders().map((order) {
+                            return Order(
+                              order.orderNumber,
+                              order.clientName,
+                              order.periodDate,
+                              order.type,
+                              order.isAssignedInWay,
+                              total: order.total,
+                              clientNumber: order.clientNumber,
+                              addressType: order.addressType,
+                              paymentType: order.paymentType,
+                              deliveryDateTime: order.deliveryDateTime,
+                              productName: order.productName,
+                              quantity: order.quantity,
+                              price: order.price,
+                              img: order.img,
+                              isAgent: order.isAgent,
+                            );
+                          }).toList();
                     });
                   },
                   icon: Icon(
@@ -241,25 +244,26 @@ class _AssignedState extends State<Assigned> {
                   onPressed: () {
                     setState(() {
                       sortByDate = !sortByDate;
-                      orderWidgets = sortedOrders().map((order) {
-                        return Order(
-                          order.orderNumber,
-                          order.clientName,
-                          order.periodDate,
-                          order.type,
-                          order.isAssignedInWay,
-                          total: order.total,
-                          clientNumber: order.clientNumber,
-                          addressType: order.addressType,
-                          paymentType: order.paymentType,
-                          deliveryDateTime: order.deliveryDateTime,
-                          productName: order.productName,
-                          quantity: order.quantity,
-                          price: order.price,
-                          img: order.img,
-                          isAgent: order.isAgent,
-                        );
-                      }).toList();
+                      orderWidgets =
+                          sortedOrders().map((order) {
+                            return Order(
+                              order.orderNumber,
+                              order.clientName,
+                              order.periodDate,
+                              order.type,
+                              order.isAssignedInWay,
+                              total: order.total,
+                              clientNumber: order.clientNumber,
+                              addressType: order.addressType,
+                              paymentType: order.paymentType,
+                              deliveryDateTime: order.deliveryDateTime,
+                              productName: order.productName,
+                              quantity: order.quantity,
+                              price: order.price,
+                              img: order.img,
+                              isAgent: order.isAgent,
+                            );
+                          }).toList();
                     });
                   },
                   icon: Icon(

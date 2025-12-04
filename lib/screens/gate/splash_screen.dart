@@ -8,6 +8,8 @@ import 'Intro.dart';
 import 'login.dart';
 
 class SplachScreen extends StatefulWidget {
+  const SplachScreen({super.key});
+
   @override
   State<SplachScreen> createState() => _SplachScreenState();
 }

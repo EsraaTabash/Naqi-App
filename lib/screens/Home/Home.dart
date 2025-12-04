@@ -17,7 +17,7 @@ import '../tabBarPages/Completed.dart';
 class Home extends StatefulWidget {
   final bool isAgent;
 
-  Home({required this.isAgent});
+  const Home({super.key, required this.isAgent});
 
   @override
   State<Home> createState() => _HomeState();
@@ -145,37 +145,38 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               ),
             ),
           ),
-          title: isSearchVisible
-              ? Container(
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: TextField(
-                          controller: searchController,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: "cairo",
-                          ),
-                          cursorColor: Colors.white, // Customize cursor color
-                          decoration: InputDecoration(
-                            hintText: 'Search...',
-                            hintStyle: TextStyle(
-                              color: Colors.white70,
+          title:
+              isSearchVisible
+                  ? Container(
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: TextField(
+                            controller: searchController,
+                            style: TextStyle(
+                              color: Colors.white,
                               fontFamily: "cairo",
                             ),
-                            border: InputBorder.none,
+                            cursorColor: Colors.white, // Customize cursor color
+                            decoration: InputDecoration(
+                              hintText: 'Search...',
+                              hintStyle: TextStyle(
+                                color: Colors.white70,
+                                fontFamily: "cairo",
+                              ),
+                              border: InputBorder.none,
+                            ),
                           ),
                         ),
-                      ),
-                      IconButton(
-                        onPressed: toggleSearchVisibility,
-                        padding: EdgeInsets.only(left: 40),
-                        icon: Icon(Icons.cancel, color: Colors.white),
-                      ),
-                    ],
-                  ),
-                )
-              : Text("Orders", style: TextStyle(fontFamily: "cairo")),
+                        IconButton(
+                          onPressed: toggleSearchVisibility,
+                          padding: EdgeInsets.only(left: 40),
+                          icon: Icon(Icons.cancel, color: Colors.white),
+                        ),
+                      ],
+                    ),
+                  )
+                  : Text("Orders", style: TextStyle(fontFamily: "cairo")),
           bottom: TabBar(
             controller: tabController,
             indicatorColor: Colors.white,
@@ -470,7 +471,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 class New extends StatefulWidget {
   final bool isAgent; // Add this parameter
 
-  const New({Key? key, required this.isAgent}) : super(key: key);
+  const New({super.key, required this.isAgent});
 
   @override
   State<New> createState() => _NewState();
@@ -498,6 +499,7 @@ class _NewState extends State<New> {
     return orders;
   }
 
+  @override
   void initState() {
     allOrders = [
       Order(
@@ -537,25 +539,26 @@ class _NewState extends State<New> {
       // Add more orders here...
     ];
 
-    orderWidgets = sortedOrders().map((order) {
-      return Order(
-        order.orderNumber,
-        order.clientName,
-        order.periodDate,
-        order.type,
-        order.isAssignedInWay,
-        total: order.total,
-        clientNumber: order.clientNumber,
-        addressType: order.addressType,
-        paymentType: order.paymentType,
-        deliveryDateTime: order.deliveryDateTime,
-        productName: order.productName,
-        quantity: order.quantity,
-        price: order.price,
-        img: order.img,
-        isAgent: order.isAgent,
-      );
-    }).toList();
+    orderWidgets =
+        sortedOrders().map((order) {
+          return Order(
+            order.orderNumber,
+            order.clientName,
+            order.periodDate,
+            order.type,
+            order.isAssignedInWay,
+            total: order.total,
+            clientNumber: order.clientNumber,
+            addressType: order.addressType,
+            paymentType: order.paymentType,
+            deliveryDateTime: order.deliveryDateTime,
+            productName: order.productName,
+            quantity: order.quantity,
+            price: order.price,
+            img: order.img,
+            isAgent: order.isAgent,
+          );
+        }).toList();
   }
 
   @override
@@ -579,25 +582,26 @@ class _NewState extends State<New> {
                   onPressed: () {
                     setState(() {
                       sortByBottles = !sortByBottles;
-                      orderWidgets = sortedOrders().map((order) {
-                        return Order(
-                          order.orderNumber,
-                          order.clientName,
-                          order.periodDate,
-                          order.type,
-                          order.isAssignedInWay,
-                          total: order.total,
-                          clientNumber: order.clientNumber,
-                          addressType: order.addressType,
-                          paymentType: order.paymentType,
-                          deliveryDateTime: order.deliveryDateTime,
-                          productName: order.productName,
-                          quantity: order.quantity,
-                          price: order.price,
-                          img: order.img,
-                          isAgent: order.isAgent,
-                        );
-                      }).toList();
+                      orderWidgets =
+                          sortedOrders().map((order) {
+                            return Order(
+                              order.orderNumber,
+                              order.clientName,
+                              order.periodDate,
+                              order.type,
+                              order.isAssignedInWay,
+                              total: order.total,
+                              clientNumber: order.clientNumber,
+                              addressType: order.addressType,
+                              paymentType: order.paymentType,
+                              deliveryDateTime: order.deliveryDateTime,
+                              productName: order.productName,
+                              quantity: order.quantity,
+                              price: order.price,
+                              img: order.img,
+                              isAgent: order.isAgent,
+                            );
+                          }).toList();
                     });
                   },
                   icon: Icon(
@@ -620,25 +624,26 @@ class _NewState extends State<New> {
                   onPressed: () {
                     setState(() {
                       sortByDate = !sortByDate;
-                      orderWidgets = sortedOrders().map((order) {
-                        return Order(
-                          order.orderNumber,
-                          order.clientName,
-                          order.periodDate,
-                          order.type,
-                          order.isAssignedInWay,
-                          total: order.total,
-                          clientNumber: order.clientNumber,
-                          addressType: order.addressType,
-                          paymentType: order.paymentType,
-                          deliveryDateTime: order.deliveryDateTime,
-                          productName: order.productName,
-                          quantity: order.quantity,
-                          price: order.price,
-                          img: order.img,
-                          isAgent: order.isAgent,
-                        );
-                      }).toList();
+                      orderWidgets =
+                          sortedOrders().map((order) {
+                            return Order(
+                              order.orderNumber,
+                              order.clientName,
+                              order.periodDate,
+                              order.type,
+                              order.isAssignedInWay,
+                              total: order.total,
+                              clientNumber: order.clientNumber,
+                              addressType: order.addressType,
+                              paymentType: order.paymentType,
+                              deliveryDateTime: order.deliveryDateTime,
+                              productName: order.productName,
+                              quantity: order.quantity,
+                              price: order.price,
+                              img: order.img,
+                              isAgent: order.isAgent,
+                            );
+                          }).toList();
                     });
                   },
                   icon: Icon(

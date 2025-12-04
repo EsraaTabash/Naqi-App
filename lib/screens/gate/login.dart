@@ -3,6 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:naqi/screens/Home/Home.dart';
 
 class Login extends StatefulWidget {
+  const Login({super.key});
+
   @override
   State<Login> createState() => _LoginState();
 }
@@ -309,12 +311,12 @@ class _LoginState extends State<Login> {
     } else {
       // Set error messages for empty fields
       setState(() {
-        mobileNumError = mobileNumController.text.isEmpty
-            ? 'Please enter mobile number'
-            : null;
-        passError = passController.text.isEmpty
-            ? 'Please enter password'
-            : null;
+        mobileNumError =
+            mobileNumController.text.isEmpty
+                ? 'Please enter mobile number'
+                : null;
+        passError =
+            passController.text.isEmpty ? 'Please enter password' : null;
       });
     }
   }
@@ -323,7 +325,7 @@ class _LoginState extends State<Login> {
 class NavigationBar extends StatefulWidget {
   final ValueChanged<int> onIndexChanged;
 
-  NavigationBar({required this.onIndexChanged});
+  const NavigationBar({super.key, required this.onIndexChanged});
 
   @override
   _NavigationBarState createState() => _NavigationBarState();
@@ -384,13 +386,14 @@ class _NavigationBarState extends State<NavigationBar> {
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: isSelected
-                ? [
-                    Colors.blue.shade600,
-                    Colors.blue.shade400,
-                    Colors.blue.shade200,
-                  ]
-                : [Colors.white, Colors.white],
+            colors:
+                isSelected
+                    ? [
+                      Colors.blue.shade600,
+                      Colors.blue.shade400,
+                      Colors.blue.shade200,
+                    ]
+                    : [Colors.white, Colors.white],
           ),
           borderRadius: BorderRadius.circular(30),
           border: Border.all(

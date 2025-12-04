@@ -4,7 +4,7 @@ class ProfileCountWidget extends StatelessWidget {
   final String title;
   final String count;
 
-  const ProfileCountWidget(this.title, this.count);
+  const ProfileCountWidget(this.title, this.count, {super.key});
 
   @override
   Widget build(BuildContext context) {

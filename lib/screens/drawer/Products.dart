@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Products extends StatelessWidget {
-  const Products({Key? key}) : super(key: key);
+  const Products({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +45,7 @@ class BottleCard extends StatefulWidget {
   final double price;
 
   const BottleCard({
+    super.key,
     required this.name,
     required this.image,
     required this.price,
@@ -152,6 +153,8 @@ class _BottleCardState extends State<BottleCard> {
 }
 
 class PriceScreen extends StatelessWidget {
+  const PriceScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -179,7 +182,7 @@ class PriceCard extends StatelessWidget {
   final String title;
   final double price;
 
-  const PriceCard({required this.title, required this.price});
+  const PriceCard({super.key, required this.title, required this.price});
 
   @override
   Widget build(BuildContext context) {

@@ -34,6 +34,7 @@ class Order extends StatelessWidget {
     this.periodDate,
     this.type,
     this.isAssignedInWay, {
+    super.key,
     this.reason = '',
     required this.isAgent, // Add this line
     this.total = '',
@@ -59,24 +60,25 @@ class Order extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => OrderDetails(
-              orderNumber: orderNumber,
-              clientName: clientName,
-              total: total,
-              clientNumber: clientNumber,
-              addressType: addressType,
-              paymentType: paymentType,
-              deliveryDate: deliveryDateTime,
-              reason: reason,
-              price: price,
-              productName: productName,
-              quantity: quantity,
-              img: img,
-            ),
+            builder:
+                (context) => OrderDetails(
+                  orderNumber: orderNumber,
+                  clientName: clientName,
+                  total: total,
+                  clientNumber: clientNumber,
+                  addressType: addressType,
+                  paymentType: paymentType,
+                  deliveryDate: deliveryDateTime,
+                  reason: reason,
+                  price: price,
+                  productName: productName,
+                  quantity: quantity,
+                  img: img,
+                ),
           ),
         );
       },
-      child: Container(
+      child: SizedBox(
         width: double.infinity,
         child: Card(
           shape: RoundedRectangleBorder(
@@ -134,10 +136,15 @@ class Order extends StatelessWidget {
                           Row(
                             children: [
                               GestureDetector(
-                                onTap: () =>
-                                    _showAssignDialog(context, delegators),
+                                onTap:
+                                    () =>
+                                        _showAssignDialog(context, delegators),
                                 child: Container(
                                   margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.blueGrey.shade400,
+                                  ),
                                   child: Padding(
                                     padding: EdgeInsets.symmetric(
                                       horizontal: 60,
@@ -151,10 +158,6 @@ class Order extends StatelessWidget {
                                         color: Colors.white,
                                       ),
                                     ),
-                                  ),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: Colors.blueGrey.shade400,
                                   ),
                                 ),
                               ),
@@ -170,6 +173,10 @@ class Order extends StatelessWidget {
                             children: [
                               Container(
                                 margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.blue.shade50,
+                                ),
                                 child: Padding(
                                   padding: EdgeInsets.fromLTRB(30, 0, 10, 0),
                                   child: Row(
@@ -188,10 +195,6 @@ class Order extends StatelessWidget {
                                     ],
                                   ),
                                 ),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: Colors.blue.shade50,
-                                ),
                               ),
                             ],
                           ),
@@ -201,10 +204,14 @@ class Order extends StatelessWidget {
                       Row(
                         children: [
                           GestureDetector(
-                            onTap: () =>
-                                _showDelayOrLateDialog(context, "Delay"),
+                            onTap:
+                                () => _showDelayOrLateDialog(context, "Delay"),
                             child: Container(
                               margin: EdgeInsets.fromLTRB(10, 10, 0, 0),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.blue.shade700,
+                              ),
                               child: Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 26),
                                 child: Text(
@@ -217,10 +224,6 @@ class Order extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.blue.shade700,
-                              ),
                             ),
                           ),
                           SizedBox(width: 5),
@@ -228,6 +231,10 @@ class Order extends StatelessWidget {
                             onTap: () => _showAssignDialog(context, delegators),
                             child: Container(
                               margin: EdgeInsets.fromLTRB(10, 10, 0, 0),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.blueGrey.shade400,
+                              ),
                               child: Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 26),
                                 child: Text(
@@ -240,10 +247,6 @@ class Order extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.blueGrey.shade400,
-                              ),
                             ),
                           ),
                         ],
@@ -255,10 +258,17 @@ class Order extends StatelessWidget {
                           Row(
                             children: [
                               GestureDetector(
-                                onTap: () =>
-                                    _showDelayOrLateDialog(context, "Delay"),
+                                onTap:
+                                    () => _showDelayOrLateDialog(
+                                      context,
+                                      "Delay",
+                                    ),
                                 // Show Delay dialog
                                 child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.blue.shade700,
+                                  ),
                                   child: Padding(
                                     padding: EdgeInsets.symmetric(
                                       horizontal: 26,
@@ -273,18 +283,19 @@ class Order extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: Colors.blue.shade700,
-                                  ),
                                 ),
                               ),
                               SizedBox(width: 10),
                               GestureDetector(
-                                onTap: () =>
-                                    _showDelayOrLateDialog(context, "Late"),
+                                onTap:
+                                    () =>
+                                        _showDelayOrLateDialog(context, "Late"),
                                 // Show Late dialog
                                 child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.blue.shade400,
+                                  ),
                                   child: Padding(
                                     padding: EdgeInsets.symmetric(
                                       horizontal: 26,
@@ -299,10 +310,6 @@ class Order extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: Colors.blue.shade400,
-                                  ),
                                 ),
                               ),
                             ],
@@ -312,6 +319,10 @@ class Order extends StatelessWidget {
                     if (type == "Cancelled")
                       Container(
                         margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.red.shade400,
+                        ),
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 55),
                           child: Text(
@@ -324,16 +335,16 @@ class Order extends StatelessWidget {
                             ),
                           ),
                         ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.red.shade400,
-                        ),
                       ),
                     if (type == "Completed")
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 10),
                         child: Container(
                           margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.green.shade400,
+                          ),
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 60),
                             child: Text(
@@ -345,10 +356,6 @@ class Order extends StatelessWidget {
                                 color: Colors.white,
                               ),
                             ),
-                          ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.green.shade400,
                           ),
                         ),
                       ),
@@ -382,20 +389,21 @@ class Order extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => OrderDetails(
-                          orderNumber: orderNumber,
-                          clientName: clientName,
-                          total: total,
-                          clientNumber: clientNumber,
-                          addressType: addressType,
-                          paymentType: paymentType,
-                          deliveryDate: deliveryDateTime,
-                          reason: reason,
-                          price: price,
-                          productName: productName,
-                          quantity: quantity,
-                          img: img,
-                        ),
+                        builder:
+                            (context) => OrderDetails(
+                              orderNumber: orderNumber,
+                              clientName: clientName,
+                              total: total,
+                              clientNumber: clientNumber,
+                              addressType: addressType,
+                              paymentType: paymentType,
+                              deliveryDate: deliveryDateTime,
+                              reason: reason,
+                              price: price,
+                              productName: productName,
+                              quantity: quantity,
+                              img: img,
+                            ),
                       ),
                     );
                   },
@@ -425,20 +433,21 @@ class CustomCardShapePainter extends CustomPainter {
       [HSLColor.fromColor(startColor).withLightness(0.8).toColor(), endColor],
     );
 
-    var path = Path()
-      ..moveTo(0, size.height)
-      ..lineTo(size.width - radius, size.height)
-      ..quadraticBezierTo(
-        size.width,
-        size.height,
-        size.width,
-        size.height - radius,
-      )
-      ..lineTo(size.width, radius)
-      ..quadraticBezierTo(size.width, 0, size.width - radius, 0)
-      ..lineTo(size.width - 1.5 * radius, 0)
-      ..quadraticBezierTo(-radius, 2 * radius, 0, size.height)
-      ..close();
+    var path =
+        Path()
+          ..moveTo(0, size.height)
+          ..lineTo(size.width - radius, size.height)
+          ..quadraticBezierTo(
+            size.width,
+            size.height,
+            size.width,
+            size.height - radius,
+          )
+          ..lineTo(size.width, radius)
+          ..quadraticBezierTo(size.width, 0, size.width - radius, 0)
+          ..lineTo(size.width - 1.5 * radius, 0)
+          ..quadraticBezierTo(-radius, 2 * radius, 0, size.height)
+          ..close();
 
     canvas.drawPath(path, paint);
   }
@@ -518,7 +527,7 @@ Future<void> _showDelayOrLateDialog(BuildContext context, String type) async {
                     Navigator.of(context).pop();
                   },
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
+                    backgroundColor: WidgetStateProperty.all<Color>(
                       Colors.red.shade600,
                     ),
                   ),
@@ -536,7 +545,7 @@ Future<void> _showDelayOrLateDialog(BuildContext context, String type) async {
                     }
                   },
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
+                    backgroundColor: WidgetStateProperty.all<Color>(
                       Colors.green.shade600,
                     ),
                   ),
@@ -611,7 +620,7 @@ Future<void> _showAssignDialog(
                     Navigator.of(context).pop();
                   },
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
+                    backgroundColor: WidgetStateProperty.all<Color>(
                       Colors.red.shade600,
                     ),
                   ),
@@ -629,7 +638,7 @@ Future<void> _showAssignDialog(
                     }
                   },
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
+                    backgroundColor: WidgetStateProperty.all<Color>(
                       Colors.green.shade600,
                     ),
                   ),

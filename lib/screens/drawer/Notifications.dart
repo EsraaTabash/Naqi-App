@@ -17,7 +17,7 @@ class NotificationModel {
 }
 
 class Notifications extends StatelessWidget {
-  Notifications({Key? key}) : super(key: key);
+  Notifications({super.key});
 
   final List<NotificationModel> notifications = [
     NotificationModel(

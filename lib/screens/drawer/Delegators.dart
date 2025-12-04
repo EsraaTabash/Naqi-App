@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class Delegators extends StatefulWidget {
-  const Delegators({Key? key}) : super(key: key);
+  const Delegators({super.key});
 
   @override
   _DelegatorsState createState() => _DelegatorsState();
 }
 
 class _DelegatorsState extends State<Delegators> {
-  List<DelegatorInfo> _delegators = [
+  final List<DelegatorInfo> _delegators = [
     DelegatorInfo(name: 'Delegator 1', isActivated: true),
     DelegatorInfo(name: 'Delegator 2', isActivated: false),
     DelegatorInfo(name: 'Delegator 3', isActivated: false),
@@ -90,6 +90,7 @@ class DelegatorCard extends StatelessWidget {
   final Function(bool) onActivationChanged;
 
   const DelegatorCard({
+    super.key,
     required this.delegator,
     required this.onDelete,
     required this.onActivationChanged,
@@ -140,7 +141,7 @@ class DelegatorCard extends StatelessWidget {
               Switch(
                 value: delegator.isActivated,
                 onChanged: onActivationChanged,
-                activeColor: Colors.green,
+                activeThumbColor: Colors.green,
                 inactiveThumbColor: Colors.grey,
               ),
             ],
@@ -152,6 +153,8 @@ class DelegatorCard extends StatelessWidget {
 }
 
 class AddDelegatorScreen extends StatefulWidget {
+  const AddDelegatorScreen({super.key});
+
   @override
   _AddDelegatorScreenState createState() => _AddDelegatorScreenState();
 }
@@ -163,8 +166,8 @@ class _AddDelegatorScreenState extends State<AddDelegatorScreen> {
   String? _selectedRegion = 'Region 1'; // Set default region
   String? _selectedCity = 'City 1'; // Set default city
 
-  List<String> _regions = ['Region 1', 'Region 2', 'Region 3'];
-  Map<String, List<String>> _citiesByRegion = {
+  final List<String> _regions = ['Region 1', 'Region 2', 'Region 3'];
+  final Map<String, List<String>> _citiesByRegion = {
     'Region 1': ['City 1', 'City 2', 'City 3'],
     'Region 2': ['City A', 'City B', 'City C'],
     'Region 3': ['City X', 'City Y', 'City Z'],
@@ -260,19 +263,20 @@ class _AddDelegatorScreenState extends State<AddDelegatorScreen> {
                   ),
                   SizedBox(height: 16),
                   DropdownButtonFormField(
-                    value: _selectedRegion,
+                    initialValue: _selectedRegion,
                     onChanged: (value) {
                       setState(() {
                         _selectedRegion = value.toString();
                         _selectedCity = _citiesByRegion[value.toString()]![0];
                       });
                     },
-                    items: _regions.map<DropdownMenuItem<String>>((region) {
-                      return DropdownMenuItem<String>(
-                        value: region,
-                        child: Text(region),
-                      );
-                    }).toList(),
+                    items:
+                        _regions.map<DropdownMenuItem<String>>((region) {
+                          return DropdownMenuItem<String>(
+                            value: region,
+                            child: Text(region),
+                          );
+                        }).toList(),
                     decoration: InputDecoration(
                       labelText: 'Region',
                       border: OutlineInputBorder(
@@ -282,7 +286,7 @@ class _AddDelegatorScreenState extends State<AddDelegatorScreen> {
                   ),
                   SizedBox(height: 16),
                   DropdownButtonFormField(
-                    value: _selectedCity,
+                    initialValue: _selectedCity,
                     onChanged: (value) {
                       setState(() {
                         _selectedCity = value.toString();

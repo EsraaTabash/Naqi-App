@@ -9,7 +9,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'login.dart';
 
 class Intro extends StatefulWidget {
-  const Intro({Key? key}) : super(key: key);
+  const Intro({super.key});
 
   @override
   State<Intro> createState() => _IntroState();
@@ -88,40 +88,40 @@ class _IntroState extends State<Intro> {
                 ),
                 isLastPage
                     ? GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return Login();
-                              },
-                            ),
-                          );
-                        },
-                        child: Text(
-                          "Done",
-                          style: TextStyle(
-                            fontFamily: "Cairo",
-                            fontSize: 18,
-                            color: Colors.black54,
+                      onTap: () {
+                        Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return Login();
+                            },
                           ),
-                        ),
-                      )
-                    : InkWell(
-                        onTap: () {
-                          pageController.nextPage(
-                            duration: Duration(milliseconds: 500),
-                            curve: Curves.easeIn,
-                          );
-                        },
-                        child: Text(
-                          "Next",
-                          style: TextStyle(
-                            fontFamily: "Cairo",
-                            fontSize: 18,
-                            color: Colors.black54,
-                          ),
+                        );
+                      },
+                      child: Text(
+                        "Done",
+                        style: TextStyle(
+                          fontFamily: "Cairo",
+                          fontSize: 18,
+                          color: Colors.black54,
                         ),
                       ),
+                    )
+                    : InkWell(
+                      onTap: () {
+                        pageController.nextPage(
+                          duration: Duration(milliseconds: 500),
+                          curve: Curves.easeIn,
+                        );
+                      },
+                      child: Text(
+                        "Next",
+                        style: TextStyle(
+                          fontFamily: "Cairo",
+                          fontSize: 18,
+                          color: Colors.black54,
+                        ),
+                      ),
+                    ),
               ],
             ),
           ),

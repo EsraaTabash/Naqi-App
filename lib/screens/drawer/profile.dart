@@ -5,7 +5,7 @@ import '../../widget/profile_count_widget.dart';
 import '../gate/login.dart';
 
 class Profile extends StatefulWidget {
-  const Profile({Key? key}) : super(key: key);
+  const Profile({super.key});
 
   @override
   _ProfileState createState() => _ProfileState();
@@ -231,7 +231,7 @@ class _ProfileState extends State<Profile> {
                           backgroundColor: Colors.blue.shade700,
                           foregroundColor: Colors.white,
                         ),
-                        child: Container(
+                        child: SizedBox(
                           width: double.infinity,
                           child: Center(
                             child: Text(

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class CustomTextfield extends StatelessWidget {
   String label;
   TextEditingController controller;
-  CustomTextfield(this.label, this.controller);
+  CustomTextfield(this.label, this.controller, {super.key});
   @override
   Widget build(BuildContext context) {
     return Container(
