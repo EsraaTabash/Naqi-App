@@ -1,11 +1,9 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../model/sp_helper.dart';
 import 'Intro.dart';
-import 'login.dart';
 
 class SplachScreen extends StatefulWidget {
   const SplachScreen({super.key});

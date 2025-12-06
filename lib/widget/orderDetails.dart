@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:intl/intl.dart';
@@ -147,10 +146,9 @@ class _OrderDetailsState extends State<OrderDetails> {
                           Expanded(
                             child: OrderDetailCard(
                               title: 'Delivery Date : ',
-                              value:
-                                  widget.dateFormat
-                                      .format(widget.deliveryDate)
-                                      .toString(),
+                              value: widget.dateFormat
+                                  .format(widget.deliveryDate)
+                                  .toString(),
                             ),
                           ),
                           if (isCancelledOrder) ...[

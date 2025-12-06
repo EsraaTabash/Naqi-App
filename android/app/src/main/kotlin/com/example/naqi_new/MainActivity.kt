@@ -1,4 +1,4 @@
-package com.example.naqi
+package com.example.naqi_new
 
 import io.flutter.embedding.android.FlutterActivity
 

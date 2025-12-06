@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:ui' as ui;
@@ -60,21 +59,20 @@ class Order extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder:
-                (context) => OrderDetails(
-                  orderNumber: orderNumber,
-                  clientName: clientName,
-                  total: total,
-                  clientNumber: clientNumber,
-                  addressType: addressType,
-                  paymentType: paymentType,
-                  deliveryDate: deliveryDateTime,
-                  reason: reason,
-                  price: price,
-                  productName: productName,
-                  quantity: quantity,
-                  img: img,
-                ),
+            builder: (context) => OrderDetails(
+              orderNumber: orderNumber,
+              clientName: clientName,
+              total: total,
+              clientNumber: clientNumber,
+              addressType: addressType,
+              paymentType: paymentType,
+              deliveryDate: deliveryDateTime,
+              reason: reason,
+              price: price,
+              productName: productName,
+              quantity: quantity,
+              img: img,
+            ),
           ),
         );
       },
@@ -136,9 +134,8 @@ class Order extends StatelessWidget {
                           Row(
                             children: [
                               GestureDetector(
-                                onTap:
-                                    () =>
-                                        _showAssignDialog(context, delegators),
+                                onTap: () =>
+                                    _showAssignDialog(context, delegators),
                                 child: Container(
                                   margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
                                   decoration: BoxDecoration(
@@ -204,8 +201,8 @@ class Order extends StatelessWidget {
                       Row(
                         children: [
                           GestureDetector(
-                            onTap:
-                                () => _showDelayOrLateDialog(context, "Delay"),
+                            onTap: () =>
+                                _showDelayOrLateDialog(context, "Delay"),
                             child: Container(
                               margin: EdgeInsets.fromLTRB(10, 10, 0, 0),
                               decoration: BoxDecoration(
@@ -258,11 +255,8 @@ class Order extends StatelessWidget {
                           Row(
                             children: [
                               GestureDetector(
-                                onTap:
-                                    () => _showDelayOrLateDialog(
-                                      context,
-                                      "Delay",
-                                    ),
+                                onTap: () =>
+                                    _showDelayOrLateDialog(context, "Delay"),
                                 // Show Delay dialog
                                 child: Container(
                                   decoration: BoxDecoration(
@@ -287,9 +281,8 @@ class Order extends StatelessWidget {
                               ),
                               SizedBox(width: 10),
                               GestureDetector(
-                                onTap:
-                                    () =>
-                                        _showDelayOrLateDialog(context, "Late"),
+                                onTap: () =>
+                                    _showDelayOrLateDialog(context, "Late"),
                                 // Show Late dialog
                                 child: Container(
                                   decoration: BoxDecoration(
@@ -389,21 +382,20 @@ class Order extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder:
-                            (context) => OrderDetails(
-                              orderNumber: orderNumber,
-                              clientName: clientName,
-                              total: total,
-                              clientNumber: clientNumber,
-                              addressType: addressType,
-                              paymentType: paymentType,
-                              deliveryDate: deliveryDateTime,
-                              reason: reason,
-                              price: price,
-                              productName: productName,
-                              quantity: quantity,
-                              img: img,
-                            ),
+                        builder: (context) => OrderDetails(
+                          orderNumber: orderNumber,
+                          clientName: clientName,
+                          total: total,
+                          clientNumber: clientNumber,
+                          addressType: addressType,
+                          paymentType: paymentType,
+                          deliveryDate: deliveryDateTime,
+                          reason: reason,
+                          price: price,
+                          productName: productName,
+                          quantity: quantity,
+                          img: img,
+                        ),
                       ),
                     );
                   },
@@ -433,21 +425,20 @@ class CustomCardShapePainter extends CustomPainter {
       [HSLColor.fromColor(startColor).withLightness(0.8).toColor(), endColor],
     );
 
-    var path =
-        Path()
-          ..moveTo(0, size.height)
-          ..lineTo(size.width - radius, size.height)
-          ..quadraticBezierTo(
-            size.width,
-            size.height,
-            size.width,
-            size.height - radius,
-          )
-          ..lineTo(size.width, radius)
-          ..quadraticBezierTo(size.width, 0, size.width - radius, 0)
-          ..lineTo(size.width - 1.5 * radius, 0)
-          ..quadraticBezierTo(-radius, 2 * radius, 0, size.height)
-          ..close();
+    var path = Path()
+      ..moveTo(0, size.height)
+      ..lineTo(size.width - radius, size.height)
+      ..quadraticBezierTo(
+        size.width,
+        size.height,
+        size.width,
+        size.height - radius,
+      )
+      ..lineTo(size.width, radius)
+      ..quadraticBezierTo(size.width, 0, size.width - radius, 0)
+      ..lineTo(size.width - 1.5 * radius, 0)
+      ..quadraticBezierTo(-radius, 2 * radius, 0, size.height)
+      ..close();
 
     canvas.drawPath(path, paint);
   }

@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:naqi/screens/gate/introPage1.dart';
 import 'package:naqi/screens/gate/introPage2.dart';
 import 'package:naqi/screens/gate/introPage3.dart';
@@ -88,40 +85,40 @@ class _IntroState extends State<Intro> {
                 ),
                 isLastPage
                     ? GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return Login();
-                            },
+                        onTap: () {
+                          Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return Login();
+                              },
+                            ),
+                          );
+                        },
+                        child: Text(
+                          "Done",
+                          style: TextStyle(
+                            fontFamily: "Cairo",
+                            fontSize: 18,
+                            color: Colors.black54,
                           ),
-                        );
-                      },
-                      child: Text(
-                        "Done",
-                        style: TextStyle(
-                          fontFamily: "Cairo",
-                          fontSize: 18,
-                          color: Colors.black54,
                         ),
-                      ),
-                    )
+                      )
                     : InkWell(
-                      onTap: () {
-                        pageController.nextPage(
-                          duration: Duration(milliseconds: 500),
-                          curve: Curves.easeIn,
-                        );
-                      },
-                      child: Text(
-                        "Next",
-                        style: TextStyle(
-                          fontFamily: "Cairo",
-                          fontSize: 18,
-                          color: Colors.black54,
+                        onTap: () {
+                          pageController.nextPage(
+                            duration: Duration(milliseconds: 500),
+                            curve: Curves.easeIn,
+                          );
+                        },
+                        child: Text(
+                          "Next",
+                          style: TextStyle(
+                            fontFamily: "Cairo",
+                            fontSize: 18,
+                            color: Colors.black54,
+                          ),
                         ),
                       ),
-                    ),
               ],
             ),
           ),
